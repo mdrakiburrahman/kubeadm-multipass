@@ -91,8 +91,9 @@ while true ; do
 
     echo "Cluster not ready. Retrying..."
 done
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+
+# Install Kubernetes Dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
 sudo apt-get update
 sudo apt-get install gnupg ca-certificates curl wget software-properties-common apt-transport-https lsb-release -y
 curl -sL https://packages.microsoft.com/keys/microsoft.asc |
